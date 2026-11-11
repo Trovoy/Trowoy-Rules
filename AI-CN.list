@@ -1,0 +1,8 @@
+# Trowoy: Chinese AI routing overrides
+DOMAIN-SUFFIX,kimi.ai
+DOMAIN-SUFFIX,moonshot.ai
+DOMAIN-SUFFIX,minimax.io
+DOMAIN-SUFFIX,dashscope.aliyuncs.com
+DOMAIN-SUFFIX,bailian.aliyun.com
+DOMAIN-SUFFIX,wenxiaoyan.com
+DOMAIN-SUFFIX,spark-api.xf-yun.com
