@@ -2,7 +2,7 @@
 
 Personal supplements for Surge. These files contain public domain names only.
 
-- `Gateway.list`: all 16 user-selected Apple/Siri/iCloud/ChatGPT/OpenAI overrides, routed to Gateway. Load immediately after Claude and before normal AI/Apple/DIRECT rules.
+- `Apple-Siri.list`: all 16 user-selected Apple/Siri/iCloud/ChatGPT/OpenAI overrides, routed to Gateway. Load immediately after Claude and before normal AI/Apple/DIRECT rules.
 - `Claude.list`: priority Claude/Anthropic service domains and exact documented auxiliary endpoints. Place first and route to AI.
 - `AI-CN.list`: direct-routing overrides for Chinese AI providers, including international domain aliases. Load before all overseas AI sets.
 - `AI-Global.list`: narrowly scoped overseas AI endpoints missing from the reviewed community snapshots. Route to the AI policy.
@@ -34,8 +34,10 @@ Sources: https://code.claude.com/docs/en/network-config and the reviewed MetaCub
 
 ## Explicit Gateway overrides (2026-11-11)
 
-Per the user's latest preference, all 16 entries in Gateway.list route to Gateway, including chatgpt.com and openai.com. These take precedence over the general AI sets and Apple domestic/CDN DIRECT rules. Claude remains the highest-priority AI set. Other OpenAI-related domains, such as oaiusercontent.com, retain their existing policy unless explicitly added here; this list changes exactly the supplied rules, not every related service dependency.
+Per the user's latest preference, all 16 entries in Apple-Siri.list route to Gateway, including chatgpt.com and openai.com. These take precedence over the general AI sets and Apple domestic/CDN DIRECT rules. Claude remains the highest-priority AI set. Other OpenAI-related domains, such as oaiusercontent.com, retain their existing policy unless explicitly added here; this list changes exactly the supplied rules, not every related service dependency.
 
 The siri keyword and icloud-content.com suffix intentionally preserve the supplied matching scope. The keyword matches any domain containing siri; the iCloud suffix also covers non-AI content. These are explicit user overrides, not an Apple Intelligence-only detector. A name-specific host such as p150-acsegateway.icloud.com matches only that host, not every numbered gateway.
 
-Policies live in the private Surge profile's RULE-SET references, not inside these public lists. Edit Gateway.list to maintain these entries; a list-only edit requires a Surge rule-set refresh, not a Worker deployment.
+Policies live in the private Surge profile's RULE-SET references, not inside these public lists. Edit Apple-Siri.list to maintain these entries; a list-only edit requires a Surge rule-set refresh, not a Worker deployment.
+
+`Apple-Siri.list` is the canonical filename. `Gateway.list` remains a legacy snapshot so profiles that have not refreshed their reference continue to work. Refresh the managed profile to use the canonical URL. Rule content and Gateway policy are unchanged.
